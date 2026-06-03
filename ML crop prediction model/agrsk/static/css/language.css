@@ -1,0 +1,209 @@
+/* =========================
+    SETTINGS PAGE
+========================= */
+
+.setting-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:20px;
+
+    border-bottom:1px solid #eee;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.setting-item:hover{
+
+    background:#f8f8f8;
+}
+
+.setting-item h3{
+
+    font-size:20px;
+
+    font-weight:600;
+
+    color:#333;
+}
+
+.setting-item span{
+
+    font-size:24px;
+
+    color:#888;
+}
+
+/* =========================
+    LANGUAGE CARD
+========================= */
+
+.language-card{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:18px 20px;
+
+    margin-bottom:12px;
+
+    border:2px solid #ddd;
+
+    border-radius:16px;
+
+    background:white;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.language-card:hover{
+
+    border-color:#1565ff;
+}
+
+.language-card.active{
+
+    border-color:#1565ff;
+
+    background:#eef3ff;
+}
+
+/* =========================
+    LANGUAGE TEXT
+========================= */
+
+.language-card h3{
+
+    font-size:20px;
+
+    font-weight:600;
+
+    color:#222;
+}
+
+.language-card p{
+
+    font-size:14px;
+
+    color:#666;
+
+    margin-top:4px;
+}
+
+/* =========================
+    MARATHI
+========================= */
+
+.marathi{
+
+    font-family:
+    "Noto Sans Devanagari",
+    "Mangal",
+    sans-serif;
+}
+
+/* =========================
+    HINDI
+========================= */
+
+.hindi{
+
+    font-family:
+    "Noto Sans Devanagari",
+    "Mangal",
+    sans-serif;
+}
+
+/* =========================
+    ENGLISH
+========================= */
+
+.english{
+
+    font-family:
+    Arial,
+    sans-serif;
+}
+
+/* =========================
+    SAVE / CANCEL BUTTONS
+========================= */
+
+.language-actions{
+
+    display:flex;
+
+    gap:15px;
+
+    margin-top:25px;
+}
+
+.language-actions button{
+
+    flex:1;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    font-weight:600;
+}
+
+.language-save{
+
+    background:#1565ff;
+
+    color:white;
+}
+
+.language-cancel{
+
+    background:#eaeaea;
+
+    color:#333;
+}
+
+/* =========================
+    RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+    .setting-item{
+
+        padding:16px;
+    }
+
+    .setting-item h3{
+
+        font-size:18px;
+    }
+
+    .language-card{
+
+        padding:15px;
+    }
+
+    .language-card h3{
+
+        font-size:18px;
+    }
+
+}

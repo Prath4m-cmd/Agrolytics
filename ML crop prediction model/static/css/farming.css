@@ -1,0 +1,222 @@
+/* =========================
+    FARMING SCREEN
+========================= */
+
+.farming-screen{
+    display:none;
+    width:100%;
+    min-height:100vh;
+    background:white;
+    padding:25px;
+}
+
+/* =========================
+    ESTIMATED PROFIT SCREEN
+========================= */
+
+.estimated-screen{
+    display:none;
+    width:100%;
+    min-height:100vh;
+    background:white;
+    padding:25px;
+}
+
+/* =========================
+    MAXIMUM BUDGET SCREEN
+========================= */
+
+.maximum-budget-screen{
+    display:none;
+    width:100%;
+    min-height:100vh;
+    background:white;
+    padding:25px;
+}
+
+/* =========================
+    NO LOSS PRICE SCREEN
+========================= */
+
+.no-loss-screen{
+    display:none;
+    width:100%;
+    min-height:100vh;
+    background:white;
+    padding:25px;
+}
+
+/* =========================
+    REQUIRED YIELD SCREEN
+========================= */
+
+.required-yield-screen{
+    display:none;
+    width:100%;
+    min-height:100vh;
+    background:white;
+    padding:25px;
+}
+
+/* =========================
+    DETAILS BUTTON
+========================= */
+
+.details-btn{
+
+    width:100%;
+
+    padding:20px;
+
+    border:none;
+
+    background:none;
+
+    color:#1565ff;
+
+    font-size:28px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    margin-top:25px;
+}
+
+/* =========================
+    FARMING RESULT CARD
+========================= */
+
+.farming-result-card{
+
+    background:#e9ecff;
+
+    border-radius:28px;
+
+    padding:40px;
+
+    text-align:center;
+
+    margin-bottom:25px;
+}
+
+.farming-result-card h3{
+
+    font-size:22px;
+
+    margin-bottom:15px;
+}
+
+.farming-result-card h1{
+
+    font-size:55px;
+
+    color:#1565ff;
+}
+
+/* =========================
+    CALCULATION DETAILS
+========================= */
+
+.calculation-details{
+
+    background:#f5f5f5;
+
+    border-radius:25px;
+
+    padding:25px;
+
+    margin-top:25px;
+}
+
+.calculation-details h2{
+
+    margin-bottom:15px;
+}
+
+.calculation-details p{
+
+    color:#555;
+
+    line-height:1.6;
+}
+
+/* =========================
+    FORMULA CARD
+========================= */
+
+.formula-card{
+
+    background:#fafafa;
+
+    border:2px solid #eee;
+
+    border-radius:20px;
+
+    padding:20px;
+
+    margin-top:20px;
+
+    text-align:center;
+}
+
+.formula-card h3{
+
+    font-size:24px;
+}
+
+.formula-card h2{
+
+    margin-top:15px;
+
+    color:#1565ff;
+}
+
+/* =========================
+    FUTURE FARMING TOOLS
+========================= */
+
+.no-loss-result{
+
+    background:#fff4e6;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    margin-top:20px;
+}
+
+.required-yield-result{
+
+    background:#eefaf1;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    margin-top:20px;
+}
+
+/* =========================
+    RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+    .details-btn{
+
+        font-size:22px;
+    }
+
+    .farming-result-card h1{
+
+        font-size:38px;
+    }
+
+    .formula-card h3{
+
+        font-size:20px;
+    }
+
+}

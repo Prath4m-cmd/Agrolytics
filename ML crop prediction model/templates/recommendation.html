@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Crop Recommendation</title>
+
+<link rel="stylesheet"
+href="{{ url_for(
+'static',
+filename='css/recommendation.css'
+) }}">
+
+</head>
+
+<body>
+<button
+onclick="
+window.location='/'
+">
+
+← Back
+
+</button>
+<div class="container">
+
+<h1>
+Crop Recommendation System 🌱
+</h1>
+
+<form action="/predict"
+method="POST">
+
+<input
+name="Nitrogen"
+placeholder="Enter Nitrogen">
+
+<input
+name="Phosphorus"
+placeholder="Enter Phosphorus">
+
+<input
+name="Potassium"
+placeholder="Enter Potassium">
+
+<input
+name="Temperature"
+placeholder="Temperature">
+
+<input
+name="Humidity"
+placeholder="Humidity">
+
+<input
+name="Ph"
+placeholder="pH">
+
+<input
+name="Rainfall"
+placeholder="Rainfall">
+
+<button>
+
+Get Recommendation
+
+</button>
+
+</form>
+
+{% if prediction %}
+
+<div class="result">
+
+Best Crop:
+<b>{{prediction}}</b>
+
+</div>
+
+{% endif %}
+
+</div>
+<script src="{{ url_for(
+'static',
+filename='js/recommendation.js'
+) }}"></script>
+</body>
+
+</html>

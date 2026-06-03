@@ -1,0 +1,265 @@
+/* =========================
+    RECOMMENDATION TOOL CARD
+========================= */
+
+#recommendationTool{
+
+    border:2px solid #d9e8ff;
+
+    background:#fbfdff;
+
+    transition:0.3s;
+}
+
+#recommendationTool:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:
+    0 10px 25px
+    rgba(0,0,0,.08);
+}
+
+/* =========================
+    RECOMMENDATION PAGE
+========================= */
+
+.recommendation-page{
+
+    min-height:100vh;
+
+    background:white;
+
+    padding:25px;
+}
+
+/* =========================
+    HEADER
+========================= */
+
+.recommendation-header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+    margin-bottom:30px;
+}
+
+.recommendation-header button{
+
+    border:none;
+
+    background:none;
+
+    font-size:30px;
+
+    cursor:pointer;
+}
+
+.recommendation-header h1{
+
+    font-size:38px;
+
+    font-weight:700;
+}
+
+/* =========================
+    FORM CARD
+========================= */
+
+.recommendation-form{
+
+    background:#f8faff;
+
+    border:2px solid #e2ebff;
+
+    border-radius:25px;
+
+    padding:30px;
+}
+
+.recommendation-form h2{
+
+    margin-bottom:25px;
+
+    color:#1565ff;
+}
+
+/* =========================
+    INPUTS
+========================= */
+
+.form-group{
+
+    margin-bottom:20px;
+}
+
+.form-group label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-weight:600;
+}
+
+.form-group input{
+
+    width:100%;
+
+    padding:15px;
+
+    border:2px solid #ddd;
+
+    border-radius:12px;
+
+    outline:none;
+
+    font-size:16px;
+}
+
+.form-group input:focus{
+
+    border-color:#1565ff;
+}
+
+/* =========================
+    GRID INPUTS
+========================= */
+
+.form-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:20px;
+}
+
+/* =========================
+    PREDICT BUTTON
+========================= */
+
+.predict-btn{
+
+    width:100%;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:#1565ff;
+
+    color:white;
+
+    font-size:20px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    margin-top:20px;
+}
+
+.predict-btn:hover{
+
+    opacity:.95;
+}
+
+/* =========================
+    RESULT CARD
+========================= */
+
+.result-card{
+
+    margin-top:30px;
+
+    background:#eef5ff;
+
+    border-radius:25px;
+
+    padding:35px;
+
+    text-align:center;
+}
+
+.result-card h2{
+
+    color:#1565ff;
+
+    margin-bottom:15px;
+}
+
+.result-card h1{
+
+    font-size:42px;
+
+    color:#1f2937;
+}
+
+/* =========================
+    RESULT ICON
+========================= */
+
+.crop-result-icon{
+
+    font-size:70px;
+
+    margin-bottom:15px;
+}
+
+/* =========================
+    INFO CARD
+========================= */
+
+.recommendation-info{
+
+    background:#f5f5f5;
+
+    border-radius:20px;
+
+    padding:20px;
+
+    margin-top:25px;
+}
+
+.recommendation-info h3{
+
+    margin-bottom:10px;
+}
+
+.recommendation-info p{
+
+    color:#555;
+
+    line-height:1.6;
+}
+
+/* =========================
+    RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+    .recommendation-header h1{
+
+        font-size:28px;
+    }
+
+    .form-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .result-card h1{
+
+        font-size:30px;
+    }
+
+}

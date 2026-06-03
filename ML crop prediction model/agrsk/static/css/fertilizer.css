@@ -1,0 +1,242 @@
+/* =========================
+    FERTILIZER SCREEN
+========================= */
+
+.fertilizer-screen{
+    display:none;
+    width:100%;
+    min-height:100vh;
+    background:white;
+    padding:20px;
+}
+
+.fertilizer-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+.fertilizer-header button{
+    cursor:pointer;
+}
+
+.crop-select-btn{
+    border:2px solid #ddd;
+    background:white;
+    border-radius:40px;
+    padding:12px 18px;
+    font-size:18px;
+}
+
+/* =========================
+    NPK SECTION
+========================= */
+
+.npk-grid{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+    margin-top:20px;
+}
+
+.npk-card{
+    background:#f8f8f8;
+    padding:25px;
+    border-radius:20px;
+}
+
+/* =========================
+    FIELD SECTION
+========================= */
+
+.field-section{
+    margin-top:40px;
+}
+
+.field-box{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:25px;
+}
+
+.field-box button{
+    width:70px;
+    height:70px;
+    border:none;
+    border-radius:50%;
+    font-size:40px;
+    cursor:pointer;
+}
+
+.field-center{
+    text-align:center;
+}
+
+.field-center h1{
+    font-size:75px;
+}
+
+.unit-row{
+    display:flex;
+    gap:25px;
+    margin-top:25px;
+}
+
+.draw-card{
+    background:#f4f4f4;
+    padding:30px;
+    border-radius:24px;
+    margin-top:25px;
+}
+
+.draw-card a{
+    color:#1565ff;
+    font-weight:700;
+    display:inline-block;
+    margin-top:18px;
+}
+
+.calculate-btn{
+    width:100%;
+    padding:20px;
+    border:none;
+    border-radius:22px;
+    background:#1565ff;
+    color:white;
+    font-size:28px;
+    margin-top:25px;
+    cursor:pointer;
+}
+
+/* =========================
+    RESULT SECTION
+========================= */
+
+.result-section{
+    display:none;
+    margin-top:40px;
+}
+
+.result-card{
+    background:#fafafa;
+    border-radius:25px;
+    padding:30px;
+    margin-top:25px;
+}
+
+.result-grid{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(180px,1fr));
+    gap:20px;
+    margin-top:20px;
+}
+
+/* =========================
+    CROP SELECTOR MODAL
+========================= */
+
+.crop-selector-modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.45);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.crop-selector-box{
+    width:90%;
+    max-width:850px;
+    background:white;
+    border-radius:30px;
+    padding:30px;
+    max-height:90vh;
+    overflow-y:auto;
+}
+
+.selector-top-bar{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-bottom:25px;
+}
+
+.crop-back-btn{
+    width:50px;
+    height:50px;
+    border:none;
+    border-radius:50%;
+    background:#f2f2f2;
+    font-size:28px;
+    cursor:pointer;
+}
+
+#cropSearch{
+    width:100%;
+    padding:18px;
+    border-radius:40px;
+    border:2px solid #ddd;
+    margin-bottom:25px;
+    font-size:20px;
+}
+
+.selector-section{
+    margin-bottom:35px;
+}
+
+.selector-grid{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(120px,1fr));
+    gap:25px;
+}
+
+.selector-card{
+    text-align:center;
+    cursor:pointer;
+}
+
+.selector-circle{
+    width:100px;
+    height:100px;
+    border:2px solid #ddd;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:auto;
+    font-size:50px;
+    background:white;
+}
+
+.active-crop .selector-circle{
+    border:4px solid #1565ff;
+}
+
+/* =========================
+    RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+    .field-center h1{
+        font-size:55px;
+    }
+
+    .unit-row{
+        flex-wrap:wrap;
+        gap:15px;
+    }
+
+    .field-box button{
+        width:55px;
+        height:55px;
+        font-size:30px;
+    }
+
+}

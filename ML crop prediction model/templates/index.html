@@ -1,0 +1,1982 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Agrolytics UI Clone</title>
+
+    <link rel="stylesheet"
+href="{{ url_for('static',
+filename='css/style.css') }}">
+
+<link rel="stylesheet"
+href="{{ url_for('static',
+filename='css/fertilizer.css') }}">
+
+<link rel="stylesheet"
+href="{{ url_for('static',
+filename='css/pesticide.css') }}">
+
+<link rel="stylesheet"
+href="{{ url_for('static',
+filename='css/farming.css') }}">
+
+<link rel="stylesheet"
+href="{{ url_for('static',
+filename='css/language.css') }}">
+
+<link rel="stylesheet"
+href="{{ url_for('static',
+filename='css/recommendation.css') }}">
+
+</head>
+
+<body>
+
+<!-- =========================
+        HOME SCREEN
+========================= -->
+
+<div class="container"
+     id="homeScreen">
+
+    <!-- HEADER -->
+
+    <div class="header">
+
+        <h1>agrolytics</h1>
+
+        <div class="assistant-btn">
+
+    <span>
+        ✨ Assistant
+    </span>
+
+    <button class="menu-btn">
+        ⋮
+    </button>
+
+</div>
+
+    </div>
+
+    <!-- CROPS -->
+
+    <div class="top-crops-section">
+
+        <div class="selected-crops"
+             id="selectedCrops">
+
+        </div>
+
+        <button class="plus-btn"
+                id="openCropModal">
+
+            +
+
+        </button>
+
+    </div>
+
+    <!-- INFO -->
+
+    <div class="info-row">
+
+        <div class="info-card">
+
+            <h2>8 May</h2>
+
+            <p>32°C ☁️</p>
+
+        </div>
+
+        <div class="info-card">
+
+            <h2>Monsoon forecast</h2>
+
+            <p>10 - 11 Jun</p>
+
+        </div>
+
+        <div class="info-card">
+
+            <h2>Spraying</h2>
+
+            <p>Unfavorable</p>
+
+        </div>
+
+    </div>
+
+    <!-- TAKE PICTURE -->
+
+    <div class="picture-card">
+
+        <div class="picture-steps">
+
+            <div>
+                📷
+                <br>
+                Take a picture
+            </div>
+
+            ➜
+
+            <div>
+                📄
+                <br>
+                See diagnosis
+            </div>
+
+            ➜
+
+            <div>
+                🧴
+                <br>
+                Get medicine
+            </div>
+
+        </div>
+
+        <button class="primary-btn">
+            Take a picture
+        </button>
+
+    </div>
+
+    <!-- TOOLS -->
+    <!-- TOOLS -->
+
+<h2 class="tool-title">
+    Tools
+</h2>
+
+<div class="tools-grid">
+
+    <!-- FERTILIZER -->
+
+    <div class="tool-card"
+         id="fertilizerTool">
+
+        <h2>Fertilizer calculator</h2>
+
+        <p>
+            Calculate fertilizer
+            values based on crop.
+        </p>
+
+    </div>
+
+    <!-- PESTICIDE -->
+
+    <div class="tool-card"
+         id="pesticideTool">
+
+        <h2>Pesticide calculator</h2>
+
+        <p>
+            Calculate pesticide
+            dosage for crops.
+        </p>
+
+    </div>
+
+    <!-- FARMING -->
+
+    <div class="tool-card"
+         id="farmingTool">
+
+        <h2>Farming calculator</h2>
+
+        <p>
+            Smart farming calculations.
+        </p>
+
+    </div>
+
+    <!-- CROP RECOMMENDATION -->
+
+    <div class="tool-card"
+         id="recommendationTool">
+
+        <h2>
+            Crop recommendation
+        </h2>
+
+        <p>
+            Get recommended crops
+            based on field, weather,
+            and farming conditions.
+        </p>
+
+    </div>
+
+</div>
+
+</div>
+
+<!-- =========================
+        CROP MODAL
+========================= -->
+    
+<!-- =========================
+        CROP MODAL
+========================= -->
+
+<div class="modal"
+     id="cropModal">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <h2>Select crops</h2>
+
+            <button id="closeCropModal">
+                ✕
+            </button>
+
+        </div>
+
+        <div class="crop-grid"
+             id="cropGrid">
+
+        </div>
+
+        <button class="save-btn"
+                id="saveCrops">
+
+            Save
+
+        </button>
+
+    </div>
+
+</div>
+
+<!-- =========================
+    FERTILIZER SCREEN
+========================= -->
+
+<div class="fertilizer-screen"
+     id="fertilizerScreen">
+
+    <!-- HEADER -->
+
+    <div class="fertilizer-header">
+
+        <button id="backToHome">
+            ←
+        </button>
+
+        <h1>
+            Fertilizer Calculator
+        </h1>
+
+        <!-- CROP SELECT -->
+
+        <button class="crop-select-btn"
+                id="openCropSelector">
+
+            <span id="selectedCropName">
+                Sorghum
+            </span>
+
+            ▼
+
+        </button>
+
+    </div>
+
+    <!-- NPK -->
+
+    <div class="npk-section">
+
+        <h2>Nutrient quantities</h2>
+
+        <p>
+            Recommended nutrient ratio
+            for your crop
+        </p>
+
+        <div class="npk-grid">
+
+            <div class="npk-card">
+
+                <h3>N:</h3>
+
+                <h1 id="nitrogenValue">
+                    9.9 kg
+                </h1>
+
+            </div>
+
+            <div class="npk-card">
+
+                <h3>P:</h3>
+
+                <h1 id="phosphorusValue">
+                    4 kg
+                </h1>
+
+            </div>
+
+            <div class="npk-card">
+
+                <h3>K:</h3>
+
+                <h1 id="potassiumValue">
+                    4.5 kg
+                </h1>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- FIELD -->
+
+    <div class="field-section">
+
+        <h2>Field size</h2>
+
+        <div class="field-box">
+
+            <button id="minusBtn">
+                −
+            </button>
+
+            <div class="field-center">
+
+                <h1 id="fieldValue">
+                    0.5
+                </h1>
+
+                <p id="fieldUnitText">
+                    Acre
+                </p>
+
+            </div>
+
+            <button id="plusBtn">
+                +
+            </button>
+
+        </div>
+
+        <!-- UNIT -->
+
+        <div class="unit-row">
+
+            <label>
+
+                <input type="radio"
+                       name="unit"
+                       value="acre"
+                       checked>
+
+                Acre
+
+            </label>
+
+            <label>
+
+                <input type="radio"
+                       name="unit"
+                       value="hectare">
+
+                Hectare
+
+            </label>
+
+            <label>
+
+                <input type="radio"
+                       name="unit"
+                       value="gunta">
+
+                Gunta
+
+            </label>
+
+        </div>
+
+        <!-- DRAW -->
+
+        <div class="draw-card">
+
+            <h2>
+                Don't know your field size?
+            </h2>
+
+            <p>
+                Draw your field on map
+                to calculate size
+            </p>
+
+            <a href="#">
+                Draw your field
+            </a>
+
+        </div>
+
+        <!-- CALCULATE -->
+
+        <button class="calculate-btn"
+                id="calculateBtn">
+
+            Calculate
+
+        </button>
+
+    </div>
+
+    <!-- RESULT -->
+
+    <div class="result-section"
+         id="resultSection">
+
+        <h1>
+            Choose your preferred
+            fertilizer combination
+        </h1>
+
+        <div class="result-card">
+
+            <h2>
+                MOP/TSP/Urea
+            </h2>
+
+            <div class="result-grid">
+
+                <div>
+
+                    <h3>MOP</h3>
+
+                    <h1 id="mopValue">
+                        7.6 kg
+                    </h1>
+
+                </div>
+
+                <div>
+
+                    <h3>TSP</h3>
+
+                    <h1 id="tspValue">
+                        8.8 kg
+                    </h1>
+
+                </div>
+
+                <div>
+
+                    <h3>Urea</h3>
+
+                    <h1 id="ureaValue">
+                        22 kg
+                    </h1>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =========================
+    CROP SELECTOR MODAL
+========================= -->
+
+<div class="crop-selector-modal"
+     id="cropSelectorModal">
+
+    <div class="crop-selector-box">
+
+        <div class="selector-top-bar">
+
+            <button class="crop-back-btn"
+                    id="closeCropSelector">
+
+                ←
+
+            </button>
+
+            <h2>
+                Select your crop
+            </h2>
+
+        </div>
+
+        <!-- SEARCH -->
+
+        <input type="text"
+               id="cropSearch"
+               placeholder="Search crop...">
+
+        <!-- YOUR CROPS -->
+
+        <div class="selector-section">
+
+            <h2>Your crops</h2>
+
+            <div class="selector-grid"
+                 id="yourCropGrid">
+
+            </div>
+
+        </div>
+
+        <!-- OTHER CROPS -->
+
+        <div class="selector-section">
+
+            <h2>Other crops</h2>
+
+            <div class="selector-grid"
+                 id="otherCropGrid">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =========================
+    PESTICIDE SCREEN
+========================= -->
+
+<div class="pesticide-screen"
+     id="pesticideScreen">
+
+    <!-- HEADER -->
+
+    <div class="pesticide-header">
+
+        <button id="backFromPesticide">
+            ←
+        </button>
+
+        <h1>
+            Pesticide calculator
+        </h1>
+
+    </div>
+
+    <!-- QUESTION -->
+
+    <div class="pesticide-question">
+
+        <h2>
+            What type of crop do
+            you want to calculate
+            pesticide dosage for?
+        </h2>
+
+    </div>
+
+    <!-- OPTIONS -->
+
+    <div class="pesticide-options">
+
+        <!-- FIELD CROPS -->
+
+        <div class="pesticide-card"
+             id="fieldCropCard">
+
+            <div class="pesticide-icon">
+                🌱
+            </div>
+
+            <h3>
+                Field crops
+            </h3>
+
+            <p>
+                Calculate dosage based
+                on area planted with
+                field crops
+            </p>
+
+        </div>
+
+        <!-- TREES -->
+
+        <div class="pesticide-card">
+
+            <div class="pesticide-icon">
+                🌳
+            </div>
+
+            <h3>
+                Trees
+            </h3>
+
+            <p>
+                Calculate dosage based
+                on amount of water
+                for all trees to treat
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- RECENT -->
+
+    <div class="recent-box">
+
+        <div class="recent-image">
+            🧴
+        </div>
+
+        <h2>
+            Recent calculations
+        </h2>
+
+        <p>
+            Your recent calculations
+            will appear here.
+        </p>
+
+        <p>
+            Compare them to see
+            how changes in total
+            product, dose per pump,
+            and pump refills.
+        </p>
+
+    </div>
+
+    <!-- FEEDBACK -->
+
+    <div class="feedback-section">
+
+        <h2>
+            How useful did you
+            find this tool?
+        </h2>
+
+        <div class="feedback-buttons">
+
+            <button>😞</button>
+
+            <button>😐</button>
+
+            <button>😊</button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =========================
+    FIELD CROPS SCREEN
+========================= -->
+
+<div class="field-crops-screen"
+     id="fieldCropsScreen">
+
+    <!-- HEADER -->
+
+    <div class="field-header">
+
+        <button id="backFromFieldCrops">
+            ←
+        </button>
+
+        <h1>Field crops</h1>
+
+    </div>
+
+    <!-- RESULT -->
+
+    <h2 class="per-title">
+        Per application
+    </h2>
+
+    <div class="top-result-card">
+
+        <h3>Total product</h3>
+
+        <h1 id="totalProduct">
+            --- ml
+        </h1>
+
+    </div>
+
+    <!-- SMALL -->
+
+    <div class="small-result-grid">
+
+        <div class="small-result-card">
+
+            <h3>Dose per refill</h3>
+
+            <h2 id="dosePerRefill">
+                --- ml
+            </h2>
+
+        </div>
+
+        <div class="small-result-card">
+
+            <h3>Pump refills</h3>
+
+            <h2 id="pumpRefills">
+                --- times
+            </h2>
+
+        </div>
+
+    </div>
+
+    <!-- AREA -->
+
+    <div class="area-section">
+
+        <h2>Area to treat</h2>
+
+        <div class="field-box">
+
+            <button id="fieldMinus">
+                −
+            </button>
+
+            <div class="field-center">
+
+                <h1 id="areaValue">
+                    1.0
+                </h1>
+
+                <p id="areaUnitText">
+                    Acre
+                </p>
+
+            </div>
+
+            <button id="fieldPlus">
+                +
+            </button>
+
+        </div>
+
+        <!-- AREA UNIT -->
+
+        <div class="unit-row">
+
+            <label>
+
+                <input type="radio"
+                       name="areaUnit"
+                       value="acre"
+                       checked>
+
+                Acre
+
+            </label>
+
+            <label>
+
+                <input type="radio"
+                       name="areaUnit"
+                       value="hectare">
+
+                Hectare
+
+            </label>
+
+            <label>
+
+                <input type="radio"
+                       name="areaUnit"
+                       value="gunta">
+
+                Gunta
+
+            </label>
+
+        </div>
+
+    </div>
+
+    <!-- PRODUCT DOSAGE -->
+
+    <div class="input-section">
+
+        <div>
+
+            <h2>Product dosage</h2>
+
+            <p>
+                Product dosage needed
+                per acre or hectare
+            </p>
+
+        </div>
+
+        <div class="input-box">
+
+            <input type="number"
+                   id="dosageInput"
+                   value="10">
+
+            <select id="dosageUnit">
+
+                <option>ml/ac</option>
+                <option>g/ha</option>
+                <option>ml/ha</option>
+                <option>g/ac</option>
+
+            </select>
+
+        </div>
+
+    </div>
+
+    <!-- WATER -->
+
+    <div class="input-section">
+
+        <div>
+
+            <h2>Water amount</h2>
+
+            <p>
+                Water required to mix
+                with product dosage
+            </p>
+
+        </div>
+
+        <div class="input-box">
+
+            <input type="number"
+                   id="waterInput"
+                   value="200">
+
+            <span>l/ac</span>
+
+        </div>
+
+    </div>
+
+    <!-- PUMP -->
+
+    <div class="input-section">
+
+        <div>
+
+            <h2>Pump size</h2>
+
+            <p>
+                Volume of the pump
+            </p>
+
+        </div>
+
+        <div class="input-box">
+
+            <select id="pumpSize">
+
+                <option>15</option>
+                <option>16</option>
+                <option>17</option>
+                <option>18</option>
+                <option>19</option>
+                <option>20</option>
+                <option>21</option>
+                <option>22</option>
+
+            </select>
+
+            <span>l</span>
+
+        </div>
+
+    </div>
+
+    <!-- CALCULATE -->
+
+    <button class="calculate-btn"
+            id="fieldCalculateBtn">
+
+        Calculate
+
+    </button>
+
+    <!-- RECENT -->
+
+    <div class="recent-calculation-card">
+
+        <h2>
+            Calculations
+        </h2>
+
+        <div class="recent-inner">
+
+            <div class="recent-grid">
+
+                <div>
+
+                    <p>Total product</p>
+
+                    <h3 id="recentTotal">
+                        10 ml
+                    </h3>
+
+                </div>
+
+                <div>
+
+                    <p>Dose per refill</p>
+
+                    <h3 id="recentDose">
+                        2 ml
+                    </h3>
+
+                </div>
+
+                <div>
+
+                    <p>Pump refills</p>
+
+                    <h3 id="recentRefills">
+                        5 times
+                    </h3>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =========================
+        TREES SCREEN
+========================= -->
+
+<div class="trees-screen"
+     id="treesScreen">
+    
+    <!-- HEADER -->
+
+    <div class="field-header">
+
+        <button id="backFromTrees">
+            ←
+        </button>
+
+        <h1>Trees</h1>
+
+    </div>
+
+    <!-- RESULT -->
+
+    <h2 class="per-title">
+        Per application
+    </h2>
+
+    <!-- TOP RESULT -->
+
+    <div class="top-result-card">
+
+        <h3>Total product</h3>
+
+        <h1 id="treeTotalProduct">
+            --- ml
+        </h1>
+
+    </div>
+
+    <!-- SMALL RESULT -->
+
+    <div class="small-result-grid">
+
+        <div class="small-result-card">
+
+            <h3>Dose per refill</h3>
+
+            <h2 id="treeDosePerRefill">
+                --- ml
+            </h2>
+
+        </div>
+
+        <div class="small-result-card">
+
+            <h3>Pump refills</h3>
+
+            <h2 id="treePumpRefills">
+                --- times
+            </h2>
+
+        </div>
+
+    </div>
+
+    <!-- WATER -->
+
+    <div class="area-section">
+
+        <h2>
+            Amount of water
+        </h2>
+
+        <p class="water-desc">
+
+            Total amount of water that
+            you will use to treat
+            your trees
+
+        </p>
+
+        <div class="field-box">
+
+            <button id="treeMinus">
+                −
+            </button>
+
+            <div class="field-center">
+
+                <h1 id="treeWaterValue">
+                    20
+                </h1>
+
+                <p>
+                    Litre
+                </p>
+
+            </div>
+
+            <button id="treePlus">
+                +
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- SEARCH -->
+
+    <div class="draw-card">
+
+        <h2>
+            Don't know dosage?
+        </h2>
+
+        <p>
+            Search by formulation,
+            crop and disease instead
+        </p>
+
+        <input type="text"
+               class="tree-search"
+               placeholder="Search formulation">
+
+    </div>
+
+    <!-- PRODUCT DOSAGE -->
+
+    <div class="input-section">
+
+        <div>
+
+            <h2>
+                Product dosage
+            </h2>
+
+            <p>
+                Product dosage needed
+                per 1 litre
+            </p>
+
+        </div>
+
+        <div class="input-box">
+
+            <input type="number"
+                   id="treeDosageInput"
+                   value="10">
+
+            <select id="treeDosageUnit">
+
+                <option>ml/l</option>
+
+                <option>g/l</option>
+
+            </select>
+
+        </div>
+
+    </div>
+
+    <!-- PUMP -->
+
+    <div class="input-section">
+
+        <div>
+
+            <h2>
+                Pump size
+            </h2>
+
+            <p>
+                Volume of the pump
+            </p>
+
+        </div>
+
+        <div class="input-box">
+
+            <select id="treePumpSize">
+
+                <option>15</option>
+                <option>16</option>
+                <option>17</option>
+                <option>18</option>
+                <option>19</option>
+                <option selected>20</option>
+                <option>21</option>
+                <option>22</option>
+
+            </select>
+
+            <span>l</span>
+
+        </div>
+
+    </div>
+
+    <!-- CALCULATE -->
+
+    <button class="calculate-btn"
+            id="treeCalculateBtn">
+
+        Calculate
+
+    </button>
+
+    <!-- RECENT -->
+
+    <div class="recent-calculation-card">
+
+        <h2>
+            Recent calculations
+        </h2>
+
+        <div class="recent-inner">
+
+            <div class="recent-grid">
+
+                <div>
+
+                    <p>Total product</p>
+
+                    <h3 id="treeRecentTotal">
+                        10 ml
+                    </h3>
+
+                </div>
+
+                <div>
+
+                    <p>Dose per refill</p>
+
+                    <h3 id="treeRecentDose">
+                        2 ml
+                    </h3>
+
+                </div>
+
+                <div>
+
+                    <p>Pump refills</p>
+
+                    <h3 id="treeRecentRefills">
+                        5 times
+                    </h3>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+    <!-- =========================
+    FARMING SCREEN
+========================= -->
+
+<div class="farming-screen"
+     id="farmingScreen">
+
+    <!-- HEADER -->
+
+    <div class="field-header">
+
+        <button id="backFromFarming">
+            ←
+        </button>
+
+        <h1>
+            Farming calculator
+        </h1>
+
+    </div>
+
+    <!-- QUESTION -->
+
+    <div class="pesticide-question">
+
+        <h2>
+            What do you want
+            to calculate?
+        </h2>
+
+    </div>
+
+    <!-- OPTIONS -->
+
+    <div class="pesticide-options">
+
+        <!-- ESTIMATED -->
+
+        <div class="pesticide-card"
+             id="estimatedProfitCard">
+
+            <div class="pesticide-icon">
+                📈
+            </div>
+
+            <h3>
+                Estimated Profit
+            </h3>
+
+            <p>
+                How much profit you
+                will make after
+                covering expenses
+            </p>
+
+        </div>
+
+        <!-- BUDGET -->
+
+        <div class="pesticide-card">
+
+            <div class="pesticide-icon">
+                ₹
+            </div>
+
+            <h3>
+                Maximum input budget
+            </h3>
+
+            <p>
+                How much you can
+                spend on inputs
+            </p>
+
+        </div>
+
+        <!-- LOSS -->
+
+        <div class="pesticide-card">
+
+            <div class="pesticide-icon">
+                🏪
+            </div>
+
+            <h3>
+                No loss price
+            </h3>
+
+            <p>
+                Lowest selling price
+                to avoid loss
+            </p>
+
+        </div>
+
+        <!-- REQUIRED -->
+
+        <div class="pesticide-card"
+     id="maximumBudgetCard">
+            <div class="pesticide-icon">
+                🎯
+            </div>
+
+            <h3>
+                Required yield
+            </h3>
+
+            <p>
+                Required harvest to
+                cover expenses
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- RECENT -->
+
+    <div class="recent-box">
+
+        
+
+        <br>
+
+        
+
+    </div>
+
+</div>
+
+<!-- =========================
+    ESTIMATED PROFIT SCREEN
+========================= -->
+
+<div class="estimated-screen"
+     id="estimatedScreen">
+
+    <!-- HEADER -->
+
+    <div class="field-header">
+
+        <button id="backFromEstimated">
+            ←
+        </button>
+
+        <h1>
+            Estimated Profit
+        </h1>
+
+    </div>
+
+    <!-- RESULT -->
+
+    <div class="top-result-card">
+
+        <h3>
+            Estimated Profit
+        </h3>
+
+        <h1 id="profitResult">
+            ₹5,600
+        </h1>
+
+    </div>
+
+    <!-- DETAILS -->
+
+    <button class="details-btn"
+            id="openProfitModal">
+
+        Calculation details
+
+    </button>
+
+    <!-- YIELD -->
+
+    <div class="input-section">
+
+        <div>
+
+            <h2>Yield</h2>
+
+            <p>Your expected yield</p>
+
+        </div>
+
+        <div class="input-box">
+
+            <input type="number"
+                   id="yieldInput"
+                   value="200">
+
+            <select>
+
+                <option>kg</option>
+
+            </select>
+
+        </div>
+
+    </div>
+
+    <!-- PRICE -->
+
+    <div class="input-section">
+
+        <div>
+
+            <h2>Selling price</h2>
+
+            <p>Price per kg</p>
+
+        </div>
+
+        <div class="input-box">
+
+            <input type="number"
+                   id="priceInput"
+                   value="53">
+
+            <select>
+
+                <option>₹/kg</option>
+
+            </select>
+
+        </div>
+
+    </div>
+
+    <!-- EXPENSE -->
+
+    <div class="input-section">
+
+        <div>
+
+            <h2>Expenses</h2>
+
+            <p>Total expenses</p>
+
+        </div>
+
+        <div class="input-box">
+
+            <input type="number"
+                   id="expenseInput"
+                   value="5000">
+
+        </div>
+
+    </div>
+
+    <!-- BUTTON -->
+
+    <button class="calculate-btn"
+            id="profitCalculateBtn">
+
+        Calculate
+
+    </button>
+
+    <!-- RECENT -->
+
+    <div class="recent-calculation-card">
+
+        <h2>
+            Recent calculations
+        </h2>
+
+        <div class="recent-inner">
+
+            <div class="recent-grid">
+
+                <div>
+
+                    <h3 id="recentProfit">
+                        ₹5,600
+                    </h3>
+
+                    <p>
+                        Estimated Profit
+                    </p>
+
+                </div>
+
+                <div>
+
+                    <p>
+                        Yield
+                    </p>
+
+                    <h3 id="recentYield">
+                        200 kg
+                    </h3>
+
+                </div>
+
+                <div>
+
+                    <p>
+                        Selling price
+                    </p>
+
+                    <h3 id="recentPrice">
+                        ₹53/kg
+                    </h3>
+
+                </div>
+
+                <div>
+
+                    <p>
+                        Expenses
+                    </p>
+
+                    <h3 id="recentExpense">
+                        ₹5000
+                    </h3>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =========================
+    PROFIT MODAL
+========================= -->
+
+<div class="modal"
+     id="profitModal">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <h2>
+                Calculation details
+            </h2>
+
+            <button id="closeProfitModal">
+                ✕
+            </button>
+
+        </div>
+
+        <p>
+            Formula:
+        </p>
+
+        <br>
+
+        <h3>
+            (Yield × Selling price)
+            - Expenses
+        </h3>
+
+        <br><br>
+
+        <h3 id="profitFormula">
+
+            (200 × ₹53)
+            - ₹5000
+
+        </h3>
+
+        <br><br>
+
+        <h2 id="profitFormulaResult">
+
+            ₹5,600
+
+        </h2>
+
+    </div>
+
+</div>
+<!-- JS -->
+    <!-- =========================
+    MAXIMUM BUDGET SCREEN
+========================= -->
+
+<div class="maximum-budget-screen"
+     id="maximumBudgetScreen">
+
+    <!-- HEADER -->
+
+    <div class="field-header">
+
+        <button id="backFromBudget">
+            ←
+        </button>
+
+        <h1>
+            Maximum input budget
+        </h1>
+
+    </div>
+
+    <!-- RESULT -->
+
+    <div class="top-result-card">
+
+        <h3>
+            Maximum input budget
+        </h3>
+
+        <h1 id="budgetResult">
+            ₹3.00 Lakh
+        </h1>
+
+    </div>
+
+    <!-- DETAILS -->
+
+    <button class="details-btn"
+            id="openBudgetModal">
+
+        Calculation details
+
+    </button>
+
+    <!-- YIELD -->
+
+    <div class="input-section">
+
+        <div>
+
+            <h2>
+                Yield
+            </h2>
+
+            <p>
+                Your expected yield
+            </p>
+
+        </div>
+
+        <div class="input-box">
+
+            <input type="number"
+                   id="budgetYieldInput"
+                   value="15000">
+
+            <select id="budgetYieldUnit">
+
+                <option>dz</option>
+                <option selected>kg</option>
+                <option>q</option>
+                <option>Bl</option>
+                <option>T</option>
+
+            </select>
+
+        </div>
+
+    </div>
+
+    <!-- PRICE -->
+
+    <div class="input-section">
+
+        <div>
+
+            <h2>
+                Selling price
+            </h2>
+
+            <p>
+                How much you expect
+                to earn per kg
+            </p>
+
+        </div>
+
+        <div class="input-box">
+
+            <input type="number"
+                   id="budgetPriceInput"
+                   value="20">
+
+            <select>
+
+                <option>₹/kg</option>
+
+            </select>
+
+        </div>
+
+    </div>
+
+    <!-- CALCULATE -->
+
+    <button class="calculate-btn"
+            id="budgetCalculateBtn">
+
+        Calculate
+
+    </button>
+
+    <!-- RECENT -->
+
+    <div class="recent-calculation-card">
+
+        <h2>
+            Recent calculations
+        </h2>
+
+        <div class="recent-inner">
+
+            <div class="recent-grid">
+
+                <div>
+
+                    <h3 id="budgetRecentResult">
+                        ₹3.00 Lakh
+                    </h3>
+
+                </div>
+
+                <div>
+
+                    <p>Yield</p>
+
+                    <h3 id="budgetRecentYield">
+                        15000 kg
+                    </h3>
+
+                </div>
+
+                <div>
+
+                    <p>Selling price</p>
+
+                    <h3 id="budgetRecentPrice">
+                        ₹20/kg
+                    </h3>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =========================
+    BUDGET MODAL
+========================= -->
+
+<div class="modal"
+     id="budgetModal">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <h2>
+                Calculation details
+            </h2>
+
+            <button id="closeBudgetModal">
+                ✕
+            </button>
+
+        </div>
+
+        <p>
+            Formula:
+        </p>
+
+        <br>
+
+        <h3>
+
+            Yield × Selling Price
+
+        </h3>
+
+        <br><br>
+
+        <h3 id="budgetFormula">
+
+            15000 × ₹20
+
+        </h3>
+
+        <br><br>
+
+        <h2 id="budgetFormulaResult">
+
+            ₹3.00 Lakh
+
+        </h2>
+
+    </div>
+
+</div>
+<!-- =========================
+    SETTINGS MENU
+========================= -->
+
+<div class="modal" id="menuModal">
+
+<div class="modal-content">
+
+<div class="modal-header">
+
+<h2>Menu</h2>
+
+<button id="closeMenu">
+✕
+</button>
+
+</div>
+
+<div class="setting-item"
+id="openSettings">
+
+Settings
+
+</div>
+
+<div class="setting-item">
+Give Feedback
+</div>
+
+<div class="setting-item">
+Recommend Agrolytics
+</div>
+
+<div class="setting-item">
+Contact & Social
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =========================
+SETTINGS SCREEN
+========================= -->
+
+<div class="maximum-budget-screen"
+id="settingsScreen">
+
+<div class="field-header">
+
+<button id="backSettings">
+←
+</button>
+
+<h1>
+Settings
+</h1>
+
+</div>
+
+<div class="draw-card">
+
+<h2>
+General
+</h2>
+
+<p>
+Select your language
+</p>
+
+<br>
+
+<button
+id="openLanguage"
+class="calculate-btn">
+
+English
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- =========================
+LANGUAGE SCREEN
+========================= -->
+
+<div class="maximum-budget-screen"
+id="languageScreen">
+
+<div class="field-header">
+
+<button id="backLanguage">
+←
+</button>
+
+<h1>
+App language
+</h1>
+
+</div>
+
+<div id="languageList">
+
+</div>
+
+<div
+style="
+display:flex;
+gap:20px;
+margin-top:40px;
+">
+
+<button
+class="save-btn"
+id="cancelLanguage">
+
+Cancel
+
+</button>
+
+<button
+class="save-btn"
+id="saveLanguage">
+
+Save
+
+</button>
+
+</div>
+
+</div>
+<script src="{{ url_for('static',
+filename='js/crop.js') }}"></script>
+
+<script src="{{ url_for('static',
+filename='js/fertilizer.js') }}"></script>
+
+<script src="{{ url_for('static',
+filename='js/pesticide.js') }}"></script>
+
+<script src="{{ url_for('static',
+filename='js/farming.js') }}"></script>
+
+<script src="{{ url_for('static',
+filename='js/language.js') }}"></script>
+
+<script src="{{ url_for('static',
+filename='js/recommendation.js') }}"></script>
+
+</body>
+</html>
